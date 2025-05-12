@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Global reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body, #root {
+  height: 100%;
+}
+body {
+  background: #111;
+  color: #0f0;
+  font-family: 'Source Code Pro', monospace;
+  line-height: 1.4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar */
+.navbar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #000;
+  border-bottom: 1px solid #0f0;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+}
+.nav-link {
+  color: #0f0;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  transition: background 0.2s;
+}
+.nav-link:hover {
+  background: rgba(0, 255, 0, 0.1);
+  border-radius: 3px;
+}
+.nav-btn {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid #0f0;
+  color: #0f0;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav-btn:hover {
+  background: rgba(0, 255, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+/* Bonk Loop Home Page */
+.bonk-loop {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #000;
+  padding: 1rem 1.5rem;
+  border: 1px solid #0f0;
+  border-radius: 4px;
+  box-shadow: 0 0 20px #060;
+}
+.bonk-loop .header {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.bonk-loop .divider {
+  margin-bottom: 1rem;
+}
+.bonk-loop .line {
+  margin: 0.25rem 0;
+}
+.action-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid #0f0;
+  color: #0f0;
+  padding: 0.5rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.action-btn:hover {
+  background: rgba(0, 255, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Shared Page Layout */
+.page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.page h2 {
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #0f0;
+  padding-bottom: 0.25rem;
+}
+
+/* History Page */
+.history-page ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+.history-item {
+  background: #000;
+  border: 1px dashed #0f0;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+}
+
+/* Favorites Page */
+.fav-page ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+.fav-item {
+  display: flex;
+  align-items: center;
+  background: #000;
+  border: 1px dashed #0f0;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  justify-content: space-between;
+}
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #f00;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
+  transition: color 0.2s;
+}
+.remove-btn:hover {
+  color: #f66;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-btn {
+    margin-left: 0;
+  }
+  .bonk-loop,
+  .page {
+    margin: 1rem;
+    padding: 1rem;
   }
 }
